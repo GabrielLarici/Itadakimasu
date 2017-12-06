@@ -1,8 +1,7 @@
 <ion-content padding id="page3" style="background-color:Default;">
   <ion-list inset>
-    <ion-item *ngFor="let product of products">
-      <h2>{{products.id}}</h2>
-      <p>{{products.title}}</p>
+    <ion-item *ngFor="let item of categories">
+      <h2>{{item.description}}</h2>
     </ion-item>
   </ion-list>
 </ion-content>

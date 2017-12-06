@@ -9,15 +9,15 @@ import { RestProvider } from '../../providers/rest/rest';
 export class HomePage {
 
   constructor(public navCtrl: NavController, public restProvider: RestProvider) {
-    this.getProducts();
+    this.getUsers();
   }
-  products: any;
+  users: any;
 
-  getProducts() {
-    this.restProvider.getProducts()
+  getUsers() {
+    this.restProvider.getUsers()
     .then(data => {
-      this.products = data;
-      console.log(this.products);
+      this.users = data;
+      console.log(this.users);
     });
   }
 
