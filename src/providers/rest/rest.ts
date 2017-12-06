@@ -17,7 +17,7 @@ export class RestProvider {
 
   getCategories() {
     return new Promise(resolve => {
-      this.http.get(this.apiUrl+'/categories?limit=4&where=parent&where_eq=0').subscribe(data => {
+      this.http.get(this.apiUrl+'/categories?where=parent&where_eq=0').subscribe(data => {
         resolve(data);
       }, err => {
         console.log(err);
@@ -25,4 +25,13 @@ export class RestProvider {
     });
   }
 
+  getProducts(categoryid) {
+    return new Promise(resolve => {
+      this.http.get(this.apiUrl+'products?limit=4&where=categoryid&where_eq='+categoryid).subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
+  }
 }
