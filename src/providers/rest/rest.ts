@@ -25,9 +25,9 @@ export class RestProvider {
     });
   }
 
-  getProducts(categoryid) {
+  getProducts(params) {
     return new Promise(resolve => {
-      this.http.get(this.apiUrl+'products?limit=4&where=categoryid&where_eq='+categoryid).subscribe(data => {
+      this.http.get(this.apiUrl+'/products?category_id='+params).subscribe(data => {
         resolve(data);
       }, err => {
         console.log(err);

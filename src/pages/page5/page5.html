@@ -1,23 +1,21 @@
 <ion-header>
   <ion-navbar>
-    <ion-buttons start>
-      <button ion-button icon-left solid>
-        <ion-icon name="arrow-back"></ion-icon>
-        Categorias
-      </button>
-    </ion-buttons>
-    <ion-title></ion-title>
+    <ion-title>Produtos</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page5" style="background-color:Default;">
+<ion-content id="page5" style="background-color:Default;">
   <ion-list id="page5-list6">
-    <ion-item *ngFor="let item of products" color="none">
+    <ion-item *ngFor="let product of products" color="none">
       <ion-thumbnail item-left>
-        <img />
+        <img src={{product.imagem}}/>
       </ion-thumbnail>
-      <h2>
-        {{item.title}}
-      </h2>
+      <h3>
+        {{product.title}}
+      </h3>
+      <h4>
+        R$ {{product.price}}
+      </h4>
+     
     </ion-item>
   </ion-list>
 </ion-content>

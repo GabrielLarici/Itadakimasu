@@ -1,7 +1,7 @@
-<ion-content padding id="page3" style="background-color:Default;">
+<ion-content id="page3" style="background-color:Default;">
   <ion-list inset>
-    <ion-item *ngFor="let item of categories" on-click="goToPage5()">
-      <h2>{{item.description}}</h2>
+    <ion-item *ngFor="let category of categories" on-click="goToPage5(category.id)">
+      <h2>{{category.description}}</h2>
     </ion-item>
   </ion-list>
-</ion-content>
+</ion-content>  

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
 
 @Component({
@@ -7,17 +7,20 @@ import { RestProvider } from '../../providers/rest/rest';
   templateUrl: 'page5.html'
 })
 export class Page5Page {
+  goToPage5: any;
+
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  constructor(public navCtrl: NavController, public restProvider: RestProvider) {
-    this.getProducts(this.categoryid);
+  constructor(public navCtrl: NavController, public restProvider: RestProvider, public navParams: NavParams) {
+    this.goToPage5 = navParams.get("categoryid")
+    this.getProducts(this.goToPage5);
+
   }
 
   products: any;
-  categoryid: any;
 
-  getProducts(categoryid) {
-    this.restProvider.getProducts(this.categoryid)
+  getProducts(params) {
+    this.restProvider.getProducts(params)
     .then(data => {
       this.products = data;
       console.log(this.products);
