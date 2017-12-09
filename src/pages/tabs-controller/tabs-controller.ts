@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { BuscarPage } from '../buscar/buscar';
 import { CategoriasPage } from '../categorias/categorias';
 import { PedidosPage } from '../pedidos/pedidos';
+import { DishInfoPage } from '../infopratos/infopratos';
 
 @Component({
   selector: 'page-tabs-controller',

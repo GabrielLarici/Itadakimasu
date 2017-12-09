@@ -3,19 +3,21 @@
     <ion-title>Produtos</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content id="page5" style="background-color:Default;">
+<ion-content id="page5" style="background-color:Default;">  
   <ion-list id="page5-list6">
-    <ion-item *ngFor="let product of products" color="none">
-      <ion-thumbnail item-left>
-        <img src={{product.imagem}}/>
-      </ion-thumbnail>
+    <ion-item *ngFor="let product of products" color="none" on-click="goToDishInfo(product.id)">
+      <div style="height: 160px; display: block;">
+        <img style="height: auto; width: auto; min-width: 85%;max-height: 150px;
+                    align-items: center; position:absolute;
+                    left: 0; right: 0; margin:0 auto;" src={{product.imagem}}/>
+      </div>
       <h3>
-        {{product.title}}
+       <b style="width: 40%; height: 20%; white-space: normal; padding-left: 5%">{{product.title}}</b>
       </h3>
-      <h4>
-        R$ {{product.price}}
+      <h4 style="padding-left: 5%">
+        Preço: R$ {{product.price}}
       </h4>
-     
+
     </ion-item>
   </ion-list>
 </ion-content>

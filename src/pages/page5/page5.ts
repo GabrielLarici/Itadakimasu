@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { DishInfoPage } from '../infopratos/infopratos';
 import { RestProvider } from '../../providers/rest/rest';
 
 @Component({
@@ -27,4 +28,9 @@ export class Page5Page {
     });
   }
   
+  goToDishInfo(params){
+    this.navCtrl.push(DishInfoPage, {
+      productid: params
+    });
+  }
 }
